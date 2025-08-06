@@ -2,7 +2,7 @@ export const resumeData = {
   name: 'Dev Gupta',
   location: 'Hyderabad',
   email: 'er.devgupta007@gmail.com',
-  phone: '+91 7052900696',
+  phone: '+91 8400707072',
   linkedin: 'https://www.linkedin.com/in/dev-gupta007',
   github: 'https://github.com/DevGupta004',
   about:
