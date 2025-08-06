@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-const phoneNumber = '1234567890'; // TODO: replace with your WhatsApp number (international format)
+import { resumeData } from '../data/resumeData';
 
 const WhatsAppFab = () => (
   <a
-    href={`https://wa.me/${phoneNumber}`}
+    href={`https://wa.me/${resumeData.phone.replace(/\s+/g, '')}`}
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat on WhatsApp"

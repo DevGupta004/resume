@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+import { resumeData } from '../data/resumeData';
+
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center">
@@ -10,7 +12,7 @@ const Hero = () => {
         transition={{ duration: 0.6 }}
         className="text-5xl font-bold"
       >
-        Dev Gupta
+        {resumeData.name}
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}

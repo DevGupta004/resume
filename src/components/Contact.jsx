@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
+import { resumeData } from '../data/resumeData';
+
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
@@ -58,10 +60,10 @@ const Contact = () => {
           </form>
         )}
         <div className="mt-8 flex justify-center space-x-6">
-          <a href="https://github.com/username" target="_blank" rel="noopener noreferrer">
+          <a href={resumeData.github} target="_blank" rel="noopener noreferrer">
             <FiGithub size={24} />
           </a>
-          <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">
+          <a href={resumeData.linkedin} target="_blank" rel="noopener noreferrer">
             <FiLinkedin size={24} />
           </a>
         </div>

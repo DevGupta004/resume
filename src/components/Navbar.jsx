@@ -9,6 +9,8 @@ const links = [
   { name: 'Contact', href: '#contact' },
 ];
 
+import { resumeData } from '../data/resumeData';
+
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [open, setOpen] = useState(false);
@@ -32,7 +34,7 @@ const Navbar = () => {
   return (
     <header className="fixed w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur border-b border-gray-200 dark:border-gray-700 z-50">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <a href="#home" className="text-xl font-semibold text-primary">Dev Gupta</a>
+        <a href="#home" className="text-xl font-semibold text-primary">{resumeData.name}</a>
         <div className="hidden md:flex space-x-6">
           {links.map(link => (
             <a key={link.name} href={link.href} className="hover:text-primary">
