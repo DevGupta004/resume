@@ -23,7 +23,7 @@ const Hero = () => {
         Full-Stack Developer
       </motion.p>
       <a
-        href="/Dev_Gupta_CV2025_08.pdf"
+        href="/Dev_Gupta_CV2025_09.pdf"
         download
         className="mt-8 inline-block bg-primary text-white px-6 py-3 rounded shadow hover:shadow-lg transition"
       >
