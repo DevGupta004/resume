@@ -2,11 +2,11 @@ export const resumeData = {
   name: 'Dev Gupta',
   location: 'Hyderabad',
   email: 'er.devgupta007@gmail.com',
-  phone: '+91 8400707072',
+  phone: '7052900696',
   linkedin: 'https://www.linkedin.com/in/dev-gupta007',
   github: 'https://github.com/DevGupta004',
   about:
-    'Passionate and performance-driven Full Stack & Mobile Developer with 4+ years of experience delivering scalable, AI-powered solutions in fintech, media, and enterprise environments. Proven track record of building robust mobile and web applications using React Native, Node.js, and scalable microservices.',
+    'Passionate and performance-driven Full Stack & Mobile App Developer with 4.5+ years of experience delivering scalable, AI-powered solutions in fintech, OTT media, and enterprise environments. Proven track record of building robust mobile and web applications using React Native, Node.js, and scalable microservices.',
   skills: [
     'React Native',
     'React.js',
@@ -18,9 +18,15 @@ export const resumeData = {
     'Firebase',
     'Gradle',
     'Xcode',
-    'iOS/Android Development',
+    'iOS/Android App Development',
+    'Crashlytics',
+    'Sentry',
     'Schema Design',
+    'Project Setup and Configuration',
     'Debugging',
+    'GitHub',
+    'GitLab',
+    'Jira',
   ],
   experience: [
     {
@@ -29,9 +35,9 @@ export const resumeData = {
       location: 'Hyderabad',
       period: 'Sept 2024 – Present',
       details: [
-        'Leading development of the mWorkOrder app for workforce management.',
-        'Integrated AI-driven capabilities and predictive analytics with cross-functional teams.',
-        'Participated in code reviews and mentored junior developers to improve team standards.',
+        'Leading development of iMaintenance, a workforce management app integrated with SAP.',
+        'Integrated AI-driven capabilities in iMaintenance to auto-generate issues and work orders.',
+        'Participated in code reviews and mentored junior developers, improving code quality and team standards.',
       ],
     },
     {
@@ -42,7 +48,8 @@ export const resumeData = {
       details: [
         "Built 'Sathi' Android app for partner onboarding.",
         "Designed and implemented 'Bank Rule Engine' (BRE).",
-        'Developed Partner Microsites and integrated scalable microservices architecture resulting in 30% faster onboarding.',
+        'Developed Partner Microsites and integrated scalable microservices architecture.',
+        'Developed and integrated a scalable microservices architecture, resulting in 30% faster onboarding.',
       ],
     },
     {
@@ -51,9 +58,9 @@ export const resumeData = {
       location: 'Delhi',
       period: 'Mar 2022 – Mar 2024',
       details: [
-        'Built cross-platform mobile apps in React Native for OTT/Short Video platforms.',
-        'Delivered scalable and reusable components for millions of end users.',
-        'Actively contributed in Agile workflows including sprint planning and retrospectives.',
+        'Developed and maintained an OTT SaaS platform and mobile app using React Native and MERN stack.',
+        'Built and optimized core modules (Social auth, Google AdMob, In-App purchase, Payment gateway, In-App Update).',
+        'Collaborated with cross-functional teams to deliver production-ready OTT mobile and web solutions, enhancing client engagement and retention.',
       ],
     },
     {
@@ -73,8 +80,15 @@ export const resumeData = {
       title: 'Pomodoro Timer App',
       tech: ['React Native', 'Express.js', 'MySQL'],
       description:
-        'A productivity timer app based on the Pomodoro technique to help users focus on tasks such as studying, coding, or writing.',
+        'A productivity app implementing the Pomodoro technique to help users stay focused on tasks.',
       github: 'https://github.com/DevGupta004/pro-focus-app',
+    },
+    {
+      title: 'OTT SaaS Platform & Mobile App (MogiIO)',
+      tech: ['React Native', 'Express.js', 'Node.js', 'MongoDB'],
+      description:
+        'Contributed to a production-ready OTT SaaS platform with video streaming, authentication, and subscription features.',
+      github: 'https://play.google.com/store/apps/details?id=com.release.mitwatv',
     },
   ],
 };
