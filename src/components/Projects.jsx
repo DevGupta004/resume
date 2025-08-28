@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiGithub } from 'react-icons/fi';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
 
 import { resumeData } from '../data/resumeData';
 
@@ -13,14 +13,42 @@ const Projects = () => (
             <h3 className="text-xl font-semibold mb-2">{proj.title}</h3>
             <p className="mb-4 text-sm text-gray-500 dark:text-gray-400">{proj.tech.join(' · ')}</p>
             <p className="mb-4">{proj.description}</p>
-            <a
-              href={proj.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-primary hover:underline"
-            >
-              <FiGithub className="mr-1" /> View on GitHub
-            </a>
+            {Array.isArray(proj.links) && proj.links.length > 0 ? (
+              <div className="flex flex-wrap gap-4">
+                {proj.links.map((l, i) => {
+                  const isGithub = l.url?.includes('github.com') || /github/i.test(l.label || '');
+                  const Icon = isGithub ? FiGithub : FiExternalLink;
+                  const label = l.label || (isGithub ? 'GitHub' : 'Open Link');
+                  return (
+                    <a
+                      key={i}
+                      href={l.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-primary hover:underline"
+                    >
+                      <Icon className="mr-1" /> {label}
+                    </a>
+                  );
+                })}
+              </div>
+            ) : (() => {
+              const url = proj.github || proj.link;
+              if (!url) return null;
+              const isGithub = url.includes('github.com');
+              const Icon = isGithub ? FiGithub : FiExternalLink;
+              const label = isGithub ? 'View on GitHub' : 'Open Link';
+              return (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-primary hover:underline"
+                >
+                  <Icon className="mr-1" /> {label}
+                </a>
+              );
+            })()}
           </div>
         ))}
       </div>

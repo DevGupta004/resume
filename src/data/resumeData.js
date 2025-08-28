@@ -81,14 +81,18 @@ export const resumeData = {
       tech: ['React Native', 'Express.js', 'MySQL'],
       description:
         'A productivity app implementing the Pomodoro technique to help users stay focused on tasks.',
-      github: 'https://github.com/DevGupta004/pro-focus-app',
+      links: [
+        { label: 'GitHub', url: 'https://github.com/DevGupta004/pro-focus-app' },
+      ],
     },
     {
       title: 'OTT SaaS Platform & Mobile App (MogiIO)',
       tech: ['React Native', 'Express.js', 'Node.js', 'MongoDB'],
       description:
         'Contributed to a production-ready OTT SaaS platform with video streaming, authentication, and subscription features.',
-      github: 'https://play.google.com/store/apps/details?id=com.release.mitwatv',
+      links: [
+        { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.release.mitwatv' },
+      ],
     },
   ],
 };
