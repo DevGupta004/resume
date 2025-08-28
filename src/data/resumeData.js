@@ -3,6 +3,7 @@ export const resumeData = {
   location: 'Hyderabad',
   email: 'er.devgupta007@gmail.com',
   phone: '7052900696',
+  waNumber: '8400707072',
   linkedin: 'https://www.linkedin.com/in/dev-gupta007',
   github: 'https://github.com/DevGupta004',
   about:
