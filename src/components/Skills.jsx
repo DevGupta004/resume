@@ -1,33 +1,52 @@
 import React from 'react';
-import { FaReact, FaNode, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa';
+import { View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { resumeData } from '../data/resumeData';
 
-const iconMap = {
-  'React.js': <FaReact size={40} />,
-  'React Native': <FaReact size={40} />,
-  'Node.js': <FaNode size={40} />,
-  'Express.js': <FaNode size={40} />,
-  JavaScript: <FaJs size={40} />,
-  MongoDB: <FaNode size={40} />,
-  MySQL: <FaHtml5 size={40} />,
-  Firebase: <FaCss3Alt size={40} />,
+const getSkillIcon = (skill) => {
+  const skillLower = skill.toLowerCase();
+  if (skillLower.includes('react')) return 'react';
+  if (skillLower.includes('node')) return 'nodejs';
+  if (skillLower.includes('javascript')) return 'language-javascript';
+  if (skillLower.includes('mongodb')) return 'database';
+  if (skillLower.includes('mysql')) return 'database';
+  if (skillLower.includes('firebase')) return 'firebase';
+  if (skillLower.includes('express')) return 'server';
+  if (skillLower.includes('redux')) return 'code-tags'; // 'redux' icon doesn't exist, using fallback
+  if (skillLower.includes('git')) return 'git';
+  return 'code-tags';
 };
 
-const Skills = () => (
-  <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-    <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-semibold mb-6">Skills</h2>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 justify-items-center">
-        {resumeData.skills.map((skill, idx) => (
-          <div key={idx} className="flex flex-col items-center">
-            {iconMap[skill] || <FaJs size={40} />} {/* Fallback icon */}
-            <span className="mt-2 text-center">{skill}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+const Skills = ({ darkMode = false }) => {
+  const bgColor = darkMode ? '#111827' : '#F9FAFB';
+  const textColor = darkMode ? '#E5E7EB' : '#111827';
+  const skillTextColor = darkMode ? '#D1D5DB' : '#374151';
+  const iconColor = darkMode ? '#60A5FA' : '#1E88E5';
+
+  return (
+    <View id="skills" style={{ paddingVertical: 80, backgroundColor: bgColor }}>
+      <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: 16 }}>
+        <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 24, color: textColor, textAlign: 'center' }}>
+          Skills
+        </Text>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 24 }}>
+          {resumeData.skills.map((skill, idx) => (
+            <View key={idx} style={{ flexDirection: 'column', alignItems: 'center', width: 80 }}>
+              <Icon 
+                name={getSkillIcon(skill)} 
+                size={40} 
+                color={iconColor} 
+              />
+              <Text style={{ marginTop: 8, textAlign: 'center', fontSize: 14, color: skillTextColor }}>
+                {skill}
+              </Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+};
 
 export default Skills;

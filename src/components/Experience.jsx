@@ -1,28 +1,59 @@
 import React from 'react';
+import { View, Text, ScrollView } from 'react-native';
 
 import { resumeData } from '../data/resumeData';
 
-const Experience = () => (
-  <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-    <div className="max-w-5xl mx-auto px-4">
-      <h2 className="text-3xl font-semibold mb-6">Experience</h2>
-      <div className="space-y-8">
-        {resumeData.experience.map((exp, idx) => (
-          <div key={idx} className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded p-6 shadow">
-            <h3 className="text-xl font-semibold">
-              {exp.role} @ {exp.company}
-            </h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{exp.period}</p>
-            <ul className="list-disc list-inside space-y-1">
-              {exp.details.map((d, i) => (
-                <li key={i}>{d}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+const Experience = ({ darkMode = false }) => {
+  const bgColor = darkMode ? '#111827' : '#F9FAFB';
+  const cardBg = darkMode ? '#1F2937' : '#FFFFFF';
+  const textColor = darkMode ? '#E5E7EB' : '#111827';
+  const subTextColor = darkMode ? '#9CA3AF' : '#6B7280';
+  const borderColor = darkMode ? '#374151' : '#E5E7EB';
+  const detailColor = darkMode ? '#D1D5DB' : '#374151';
+
+  return (
+    <View id="experience" style={{ paddingVertical: 80, backgroundColor: bgColor }}>
+      <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: 16 }}>
+        <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 24, color: textColor }}>
+          Experience
+        </Text>
+        <View style={{ gap: 32 }}>
+          {resumeData.experience.map((exp, idx) => (
+            <View 
+              key={idx} 
+              style={{
+                backgroundColor: cardBg,
+                borderWidth: 1,
+                borderColor: borderColor,
+                borderRadius: 8,
+                padding: 24,
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: darkMode ? 0.3 : 0.1,
+                shadowRadius: 4,
+                elevation: 2,
+              }}
+            >
+              <Text style={{ fontSize: 20, fontWeight: '600', color: textColor }}>
+                {exp.role} @ {exp.company}
+              </Text>
+              <Text style={{ fontSize: 14, color: subTextColor, marginTop: 4, marginBottom: 16 }}>
+                {exp.period}
+              </Text>
+              <View style={{ gap: 8 }}>
+                {exp.details.map((d, i) => (
+                  <View key={i} style={{ flexDirection: 'row' }}>
+                    <Text style={{ color: detailColor, marginRight: 8 }}>•</Text>
+                    <Text style={{ flex: 1, color: detailColor }}>{d}</Text>
+                  </View>
+                ))}
+              </View>
+            </View>
+          ))}
+        </View>
+      </View>
+    </View>
+  );
+};
 
 export default Experience;
