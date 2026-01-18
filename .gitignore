@@ -79,3 +79,6 @@ package-lock.json
 
 # testing
 /coverage
+
+# Build outputs
+/web-build

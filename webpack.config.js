@@ -2,10 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const mode = (process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production') ? 'production' : 'development';
+
 module.exports = {
   entry: './web/index.js',
-  mode: process.env.NODE_ENV || 'development',
-  devtool: 'source-map',
+  mode: mode,
+  devtool: mode === 'production' ? 'source-map' : 'eval-source-map',
   module: {
     rules: [
       {
@@ -68,11 +70,11 @@ module.exports = {
       filename: 'index.html',
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.NODE_ENV': JSON.stringify(mode),
       'process.platform': JSON.stringify('web'),
       'process.version': JSON.stringify('v16.0.0'),
       'process.browser': JSON.stringify(true),
-      '__DEV__': JSON.stringify(true),
+      '__DEV__': JSON.stringify(mode !== 'production'),
       '__TEST__': JSON.stringify(false),
     }),
     // process is imported in web/index.js, no need for ProvidePlugin
