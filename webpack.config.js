@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const mode = (process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production') ? 'production' : 'development';
 
@@ -68,6 +69,23 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './web/index.html',
       filename: 'index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'web/fonts'),
+          to: path.resolve(__dirname, 'web-build/fonts'),
+          noErrorOnMissing: true,
+        },
+        {
+          from: path.resolve(__dirname, 'node_modules/react-native-vector-icons/Fonts'),
+          to: path.resolve(__dirname, 'web-build/fonts'),
+          globOptions: {
+            ignore: ['**/FontAwesome5*.ttf', '**/FontAwesome6*.ttf'], // Only copy FontAwesome.ttf (v4) to avoid conflicts
+          },
+          noErrorOnMissing: true,
+        },
+      ],
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(mode),
