@@ -18,7 +18,7 @@ const generateFallbackResponse = (userMessage) => {
 
   // About/Introduction
   if (message.match(/(who is|tell me about|introduce|about dev|background|overview)/)) {
-    return `Dev Gupta is a passionate and performance-driven Full Stack & Mobile App Developer with 4.5+ years of experience. He specializes in delivering scalable, AI-powered solutions in fintech, OTT media, and enterprise environments. Currently based in Hyderabad, Dev has a proven track record of building robust mobile and web applications using React Native, Node.js, and scalable microservices.`;
+    return `Dev Gupta is a passionate and performance-driven React Native & Full Stack Developer with 4.5+ years of experience. He specializes in building scalable, AI-powered applications across fintech, OTT media, and SAP-based enterprise environments. Currently based in Hyderabad, Dev has a proven track record of delivering robust mobile and web solutions using React Native and the MERN stack.`;
   }
 
   // Experience

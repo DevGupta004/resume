@@ -25,7 +25,7 @@ const Skills = ({ darkMode = false }) => {
   const iconColor = darkMode ? '#60A5FA' : '#1E88E5';
 
   return (
-    <View id="skills" style={{ paddingVertical: 0, backgroundColor: bgColor }}>
+    <View id="skills" style={{ paddingVertical: 48, backgroundColor: bgColor }}>
       <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: 16 }}>
         <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 24, color: textColor, textAlign: 'center' }}>
           Skills

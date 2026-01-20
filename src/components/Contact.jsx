@@ -52,7 +52,7 @@ const Contact = ({ darkMode = false }) => {
   const messageMinHeight = isWeb ? 150 : 100;
 
   return (
-    <View id="contact" style={{ paddingVertical: isWeb ? 100 : 80, backgroundColor: bgColor }}>
+    <View id="contact" style={{ paddingVertical: isWeb ? 60 : 48, backgroundColor: bgColor }}>
       <View style={{ 
         maxWidth: containerMaxWidth, 
         marginHorizontal: 'auto', 

@@ -12,7 +12,7 @@ const About = ({ darkMode = false }) => {
     <View 
       id="about" 
       style={{ 
-        paddingTop: 24,
+        paddingTop: 48,
         paddingBottom: 24,
         maxWidth: 1280, 
         marginHorizontal: 'auto', 

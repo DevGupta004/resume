@@ -21,7 +21,7 @@ const Projects = ({ darkMode = false }) => {
   };
 
   return (
-    <View id="projects" style={{ paddingVertical: 80, backgroundColor: bgColor }}>
+    <View id="projects" style={{ paddingVertical: 48, backgroundColor: bgColor }}>
       <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: 16 }}>
         <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 24, color: textColor }}>
           Projects

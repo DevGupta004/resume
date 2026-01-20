@@ -86,7 +86,7 @@ const Hero = ({ scrollToSection }) => {
         }}
       >
         <Text style={{ marginTop: 16, fontSize: 20, color: '#1E88E5', textAlign: 'center' }}>
-          Full-Stack Developer
+          React Native & Full Stack Developer
         </Text>
       </Animated.View>
 

@@ -12,12 +12,12 @@ const Experience = ({ darkMode = false }) => {
   const detailColor = darkMode ? '#D1D5DB' : '#374151';
 
   return (
-    <View id="experience" style={{ paddingVertical: 0, backgroundColor: bgColor }}>
+    <View id="experience" style={{ paddingVertical: 48, backgroundColor: bgColor }}>
       <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: 16 }}>
         <Text style={{ fontSize: 30, fontWeight: '600', marginBottom: 24, color: textColor }}>
           Experience
         </Text>
-        <View style={{ gap: 32 }}>
+        <View style={{ gap: 24 }}>
           {resumeData.experience.map((exp, idx) => (
             <View 
               key={idx} 

@@ -7,10 +7,13 @@ export const resumeData = {
   linkedin: 'https://www.linkedin.com/in/dev-gupta007',
   github: 'https://github.com/DevGupta004',
   about:
-    'Passionate and performance-driven Full Stack & Mobile App Developer with 4.5+ years of experience delivering scalable, AI-powered solutions in fintech, OTT media, and enterprise environments. Proven track record of building robust mobile and web applications using React Native, Node.js, and scalable microservices.',
+    'Passionate and performance-driven React Native & Full Stack Developer with 4.5+ years of experience building scalable, AI-powered applications across fintech, OTT media, and SAP-based enterprise environments. Proven track record of delivering robust mobile and web solutions using React Native and the MERN stack.',
   skills: [
     'React Native',
     'React.js',
+    'JavaScript',
+    'TypeScript',
+    'Redux Toolkit',
     'Express.js',
     'MongoDB',
     'MySQL',
@@ -19,12 +22,26 @@ export const resumeData = {
     'Firebase',
     'Gradle',
     'Xcode',
-    'iOS/Android App Development',
+    'REST APIs',
+    'GraphQL',
+    'CodePush',
+    'Webpack',
+    'Jest',
+    'Detox',
     'Crashlytics',
     'Sentry',
+    'CI/CD',
+    'Mixpanel',
+    'Google Maps',
+    'iOS/Android App Development',
+    'End-to-end React Native App Development & Deployment',
+    'Critical Bug Resolution',
+    'Performance Optimization',
     'Schema Design',
-    'Project Setup and Configuration',
-    'Debugging',
+    'Project Setup & Configuration',
+    'Analytics Integration (Mixpanel)',
+    'Map-based Features (Google Maps)',
+    'Error Monitoring (Crashlytics, Sentry)',
     'GitHub',
     'GitLab',
     'Jira',
@@ -36,8 +53,9 @@ export const resumeData = {
       location: 'Hyderabad',
       period: 'Sept 2024 – Present',
       details: [
-        'Leading development of iMaintenance, a workforce management app integrated with SAP.',
-        'Integrated AI-driven capabilities in iMaintenance to auto-generate issues and work orders.',
+        'Integrated AI-driven capabilities in iMaintenance App (React-Native) to auto-generate issues and work orders (with SAP).',
+        'Leading end-to-end development of the iMaintenance app, a workforce management solution seamlessly connected with SAP for field operations and asset management.',
+        'Diagnose and resolve intricate technical issues promptly, maintaining system reliability and performance.',
         'Participated in code reviews and mentored junior developers, improving code quality and team standards.',
       ],
     },
@@ -47,10 +65,9 @@ export const resumeData = {
       location: 'Gurugram, Haryana',
       period: 'Apr 2024 – Aug 2024',
       details: [
-        "Built 'Sathi' Android app for partner onboarding.",
+        "Built 'Sathi' React-Native app for partner onboarding.",
         "Designed and implemented 'Bank Rule Engine' (BRE).",
-        'Developed Partner Microsites and integrated scalable microservices architecture.',
-        'Developed and integrated a scalable microservices architecture, resulting in 30% faster onboarding.',
+        'Contributed to the development of Partner Micro Sites for partner engagement and retention.',
       ],
     },
     {
@@ -60,8 +77,8 @@ export const resumeData = {
       period: 'Mar 2022 – Mar 2024',
       details: [
         'Developed and maintained an OTT SaaS platform and mobile app using React Native and MERN stack.',
-        'Built and optimized core modules (Social auth, Google AdMob, In-App purchase, Payment gateway, In-App Update).',
-        'Collaborated with cross-functional teams to deliver production-ready OTT mobile and web solutions, enhancing client engagement and retention.',
+        'Built and optimized core modules (Social auth, Google AdMob, In-App purchase, Payment gateway, In-App Update etc).',
+        'Collaborated with cross-functional teams to deliver production-ready OTT mobile and web solutions, enhancing user engagement and retention.',
       ],
     },
     {
@@ -92,8 +109,33 @@ export const resumeData = {
       description:
         'Contributed to a production-ready OTT SaaS platform with video streaming, authentication, and subscription features.',
       links: [
+        { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=in.incubez.app' },
         { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.release.mitwatv' },
       ],
     },
+    {
+      title: 'Saathi & Mobile App (Ambak)',
+      tech: ['React Native', 'Node.js', 'MongoDB'],
+      description:
+        'Contributed to the development of a production-ready Partner Onboarding platform.',
+      links: [
+        { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.ambak.saathi' },
+      ],
+    },
   ],
+  awards: [
+    {
+      title: 'Spartan Award – 2024',
+      description: 'Awarded by Mogi I/O for outstanding performance and contribution to product development.',
+    },
+    {
+      title: 'Innovapptive AI First Hackathon (96 Hours), 2025',
+      description: 'Developed an offline AI-powered React Native app, enabling on-device inference without internet dependency, built within 96 hours.',
+    },
+  ],
+  education: {
+    degree: 'B.Tech in Computer Science & Engineering',
+    period: '2016 – 2020',
+    institution: 'Institute of Technology & Management, GIDA Gorakhpur',
+  },
 };
