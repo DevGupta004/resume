@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ActivityIndicator, Pressable, Linking, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { isWeb } from '../utils/platform';
+import { isWeb, useIsMobileWeb } from '../utils/platform';
 import BottomSheet from '../components/BottomSheet';
 
 // Conditional WebView import - only for mobile
@@ -16,6 +16,7 @@ if (!isWeb) {
 
 const JobsScreen = ({ darkMode = false }) => {
   const insets = useSafeAreaInsets();
+  const isMobileWeb = useIsMobileWeb();
   const [loading, setLoading] = useState(!isWeb); // Don't show loading on web
   const [bottomSheetVisible, setBottomSheetVisible] = useState(false);
   const [selectedUrl, setSelectedUrl] = useState(null);
@@ -139,7 +140,7 @@ const JobsScreen = ({ darkMode = false }) => {
         {/* Content for Web - Show fallback immediately since Google blocks iframe */}
         <View style={{ 
           flex: 1,
-          paddingTop: isWeb ? insets.top + 64 + 16 : insets.top + 56 + 16,
+          paddingTop: (isWeb && !isMobileWeb) ? insets.top + 64 + 16 : insets.top + 56 + 16,
         }}>
           {/* Don't even try to load iframe on web - show fallback immediately */}
           {webViewError && (
@@ -250,7 +251,7 @@ const JobsScreen = ({ darkMode = false }) => {
           justifyContent: 'center',
           alignItems: 'center',
           paddingHorizontal: 24,
-          paddingTop: isWeb ? insets.top + 64 + 16 : insets.top + 56 + 16,
+          paddingTop: (isWeb && !isMobileWeb) ? insets.top + 64 + 16 : insets.top + 56 + 16,
         }}>
           <View style={{
             backgroundColor: cardBg,

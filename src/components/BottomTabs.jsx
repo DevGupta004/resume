@@ -28,7 +28,7 @@ const BottomTabs = ({ activeTab, onTabPress, darkMode }) => {
   return (
     <View
       style={{
-        position: 'absolute',
+        position: isWeb ? 'fixed' : 'absolute',
         bottom: 0,
         left: 0,
         right: 0,

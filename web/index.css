@@ -6,3 +6,57 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Mobile web styling - make it look like native app */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent pull-to-refresh on mobile web */
+  overscroll-behavior-y: contain;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile viewport constraints - only for actual mobile devices */
+@media (max-width: 767px) {
+  /* On mobile screens, center the app with max-width to simulate native app */
+  body {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+  }
+  
+  #root {
+    max-width: 428px; /* iPhone 14 Pro Max width */
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Prevent text selection on mobile-like UI elements */
+@media (max-width: 767px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+  
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Safe area support for mobile web */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
+}

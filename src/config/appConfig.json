@@ -1,0 +1,8 @@
+{
+  "appStore": {
+    "ios": "https://apps.apple.com/app/dev-gupta-resume/id123456789",
+    "android": "https://play.google.com/store/apps/details?id=com.devgupta.resume"
+  },
+  "appName": "Dev Gupta Resume",
+  "appDescription": "Access Dev Clone AI and explore Dev Gupta's portfolio"
+}

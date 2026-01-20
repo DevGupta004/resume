@@ -1,15 +1,16 @@
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { isWeb } from '../utils/platform';
+import { isWeb, useIsMobileWeb } from '../utils/platform';
 import Skills from '../components/Skills';
 
 const SkillsScreen = ({ darkMode = false }) => {
   const insets = useSafeAreaInsets();
-  // Bottom tab bar height only for mobile (compact: 56px + padding + safe area)
-  const bottomPadding = isWeb ? 32 : insets.bottom + 70;
-  // Top header height: 64px (web) or 56px (mobile) + safe area + compact spacing
-  const topPadding = isWeb ? insets.top + 64 + 8 : insets.top + 56 + 8;
+  const isMobileWeb = useIsMobileWeb();
+  // Bottom tab bar height: show on mobile or mobile web (compact: 56px + padding + safe area)
+  const bottomPadding = (isWeb && !isMobileWeb) ? 32 : insets.bottom + 70;
+  // Top header height: 64px (desktop web) or 56px (mobile/mobile web) + safe area + compact spacing
+  const topPadding = (isWeb && !isMobileWeb) ? insets.top + 64 + 8 : insets.top + 56 + 8;
   const bgColor = darkMode ? '#111827' : '#FFFFFF';
 
   return (

@@ -13,7 +13,7 @@ const tabs = [
   { id: 'jobs', label: 'Jobs', icon: 'briefcase' },
 ];
 
-const TopHeader = ({ darkMode, onDarkModeToggle, onProfilePress, activeTab, onTabPress }) => {
+const TopHeader = ({ darkMode, onDarkModeToggle, onProfilePress, activeTab, onTabPress, showTabs = true }) => {
   const insets = useSafeAreaInsets();
   const [profileImageUri, setProfileImageUri] = useState(null);
 
@@ -120,8 +120,8 @@ const TopHeader = ({ darkMode, onDarkModeToggle, onProfilePress, activeTab, onTa
           </Pressable>
         </View>
 
-        {/* Tabs for Web - Center */}
-        {isWeb && (
+        {/* Tabs for Web - Center (hidden on mobile web) */}
+        {isWeb && showTabs && (
           <View style={{
             flexDirection: 'row',
             alignItems: 'center',

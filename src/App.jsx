@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Platform, Vibration } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { storage } from './utils/storage';
-import { isWeb } from './utils/platform';
+import { isWeb, useIsMobileWeb } from './utils/platform';
 
 // Screens
 import AboutScreen from './screens/AboutScreen';
@@ -24,6 +24,7 @@ const App = () => {
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [drawerScreen, setDrawerScreen] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const isMobileWeb = useIsMobileWeb();
 
   React.useEffect(() => {
     const initTheme = async () => {
@@ -105,6 +106,7 @@ const App = () => {
           backgroundColor: darkMode ? '#111827' : '#FFFFFF',
           width: '100%',
           minHeight: typeof window !== 'undefined' ? '100vh' : '100%',
+          paddingBottom: (!isWeb || isMobileWeb) ? 0 : 0,
         }}
       >
         <TopHeader
@@ -113,9 +115,10 @@ const App = () => {
           onProfilePress={() => setDrawerVisible(true)}
           activeTab={activeTab}
           onTabPress={handleTabPress}
+          showTabs={isWeb && !isMobileWeb}
         />
         {React.cloneElement(renderScreen(), { darkMode })}
-        {!isWeb && (
+        {(!isWeb || isMobileWeb) && (
           <BottomTabs
             activeTab={activeTab}
             onTabPress={handleTabPress}

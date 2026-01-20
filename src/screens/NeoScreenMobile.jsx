@@ -1,16 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, Text, ScrollView, TextInput, Pressable, KeyboardAvoidingView, Platform, Modal, Alert, Animated } from 'react-native';
+import { View, Text, ScrollView, TextInput, Pressable, KeyboardAvoidingView, Platform, Modal, Alert, Animated, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Feather';
-import { isWeb } from '../utils/platform';
+import { isWeb, useIsMobileWeb } from '../utils/platform';
 import { generateAIResponse, initAIService, isOfflineModelAvailable } from '../utils/aiService';
 import { checkModelExists } from '../utils/modelManager';
 import ModelDownloadScreen from './ModelDownloadScreen';
+import appConfig from '../config/appConfig.json';
 
 const NeoScreenMobile = ({ darkMode = false }) => {
   // All hooks must be called before any conditional returns
   const [showDownloadScreen, setShowDownloadScreen] = useState(false);
   const insets = useSafeAreaInsets();
+  const isMobileWeb = useIsMobileWeb();
   const bgColor = darkMode ? '#111827' : '#FFFFFF';
   const headerBg = darkMode ? '#111827' : '#FFFFFF';
   const textColor = darkMode ? '#E5E7EB' : '#111827';
@@ -180,6 +182,252 @@ const NeoScreenMobile = ({ darkMode = false }) => {
 
   // Check if model is loaded and available
   const isModelReady = modelExists && isOfflineModelAvailable();
+
+  // Handle app store link opening
+  const handleAppStoreLink = (url) => {
+    if (url && typeof Linking !== 'undefined' && Linking.canOpenURL) {
+      Linking.openURL(url).catch(err => {
+        console.error('Error opening app store link:', err);
+        Alert.alert('Error', 'Unable to open app store link');
+      });
+    } else if (url && typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
+  };
+
+  // Show download message on mobile web
+  if (isWeb && isMobileWeb) {
+    return (
+      <ScrollView
+        style={{ flex: 1, backgroundColor: bgColor }}
+        contentContainerStyle={{
+          paddingTop: insets.top + 56 + 16,
+          paddingBottom: insets.bottom + 70 + 16,
+          paddingHorizontal: 24,
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100%',
+        }}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={{
+          width: '100%',
+          maxWidth: 400,
+          alignItems: 'center',
+        }}>
+          {/* Icon */}
+          <View style={{
+            width: 120,
+            height: 120,
+            borderRadius: 60,
+            backgroundColor: darkMode ? 'rgba(30, 136, 229, 0.15)' : 'rgba(30, 136, 229, 0.1)',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 32,
+            borderWidth: 2,
+            borderColor: darkMode ? 'rgba(30, 136, 229, 0.3)' : 'rgba(30, 136, 229, 0.2)',
+          }}>
+            <Icon name="smartphone" size={56} color="#1E88E5" />
+          </View>
+
+          {/* Title */}
+          <Text style={{
+            color: textColor,
+            fontSize: 26,
+            fontWeight: '700',
+            marginBottom: 12,
+            textAlign: 'center',
+            letterSpacing: -0.3,
+            lineHeight: 34,
+            paddingHorizontal: 16,
+          }}>
+            Ask Dev - My AI Clone app
+          </Text>
+
+          {/* Description */}
+          <Text style={{
+            color: darkMode ? '#9CA3AF' : '#6B7280',
+            fontSize: 16,
+            marginBottom: 40,
+            textAlign: 'center',
+            lineHeight: 24,
+            paddingHorizontal: 8,
+          }}>
+            To access Ask Dev - My AI Clone app and chat with Dev's AI assistant, please download the mobile app from the App Store or Google Play.
+          </Text>
+
+          {/* App Store Buttons */}
+          <View style={{
+            width: '100%',
+            gap: 16,
+            marginBottom: 32,
+          }}>
+            {/* iOS App Store Button */}
+            <Pressable
+              onPress={() => handleAppStoreLink(appConfig.appStore.ios)}
+              style={({ pressed }) => ({
+                backgroundColor: darkMode ? '#1F2937' : '#000000',
+                paddingVertical: 16,
+                paddingHorizontal: 24,
+                borderRadius: 14,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderWidth: 1,
+                borderColor: darkMode ? '#374151' : '#000000',
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.1,
+                shadowRadius: 4,
+                transform: [{ scale: pressed ? 0.98 : 1 }],
+              })}
+            >
+              <View style={{
+                width: 40,
+                height: 40,
+                borderRadius: 10,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginRight: 12,
+              }}>
+                <Icon name="smartphone" size={22} color="#FFFFFF" />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  fontSize: 11,
+                  fontWeight: '500',
+                  marginBottom: 2,
+                  textAlign: 'left',
+                  letterSpacing: 0.5,
+                }}>
+                  Download on the
+                </Text>
+                <Text style={{
+                  color: '#FFFFFF',
+                  fontSize: 20,
+                  fontWeight: '700',
+                  textAlign: 'left',
+                  letterSpacing: -0.5,
+                }}>
+                  App Store
+                </Text>
+              </View>
+              <Icon name="chevron-right" size={20} color="rgba(255, 255, 255, 0.7)" />
+            </Pressable>
+
+            {/* Google Play Store Button */}
+            <Pressable
+              onPress={() => handleAppStoreLink(appConfig.appStore.android)}
+              style={({ pressed }) => ({
+                backgroundColor: darkMode ? '#1F2937' : '#000000',
+                paddingVertical: 16,
+                paddingHorizontal: 24,
+                borderRadius: 14,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderWidth: 1,
+                borderColor: darkMode ? '#374151' : '#000000',
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.1,
+                shadowRadius: 4,
+                transform: [{ scale: pressed ? 0.98 : 1 }],
+              })}
+            >
+              <View style={{
+                width: 40,
+                height: 40,
+                borderRadius: 10,
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginRight: 12,
+              }}>
+                <Icon name="smartphone" size={22} color="#FFFFFF" />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  fontSize: 11,
+                  fontWeight: '500',
+                  marginBottom: 2,
+                  textAlign: 'left',
+                  letterSpacing: 0.5,
+                }}>
+                  GET IT ON
+                </Text>
+                <Text style={{
+                  color: '#FFFFFF',
+                  fontSize: 20,
+                  fontWeight: '700',
+                  textAlign: 'left',
+                  letterSpacing: -0.5,
+                }}>
+                  Google Play
+                </Text>
+              </View>
+              <Icon name="chevron-right" size={20} color="rgba(255, 255, 255, 0.7)" />
+            </Pressable>
+          </View>
+
+          {/* Features List */}
+          <View style={{
+            width: '100%',
+            backgroundColor: darkMode ? '#1F2937' : '#F9FAFB',
+            borderRadius: 16,
+            padding: 20,
+            borderWidth: 1,
+            borderColor: borderColor,
+          }}>
+            <Text style={{
+              color: textColor,
+              fontSize: 16,
+              fontWeight: '600',
+              marginBottom: 16,
+              textAlign: 'center',
+            }}>
+              Features Available in App
+            </Text>
+            <View style={{ gap: 12 }}>
+              {[
+                { icon: 'message-circle', text: 'Chat with Ask Dev AI' },
+                { icon: 'zap', text: 'Offline AI capabilities' },
+                { icon: 'download', text: 'Download AI models locally' },
+                { icon: 'shield', text: 'Privacy-focused experience' },
+              ].map((feature, index) => (
+                <View key={index} style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                  <View style={{
+                    width: 32,
+                    height: 32,
+                    borderRadius: 16,
+                    backgroundColor: darkMode ? 'rgba(30, 136, 229, 0.15)' : 'rgba(30, 136, 229, 0.1)',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginRight: 12,
+                  }}>
+                    <Icon name={feature.icon} size={16} color="#1E88E5" />
+                  </View>
+                  <Text style={{
+                    color: darkMode ? '#D1D5DB' : '#374151',
+                    fontSize: 14,
+                    flex: 1,
+                  }}>
+                    {feature.text}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    );
+  }
 
   // Always render the same component structure, conditionally show content
   return (
