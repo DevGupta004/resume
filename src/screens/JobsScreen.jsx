@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ActivityIndicator, Pressable } from 'react-native';
+import { View, Text, ActivityIndicator, Pressable, Linking, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { isWeb } from '../utils/platform';
 import BottomSheet from '../components/BottomSheet';
@@ -362,8 +362,39 @@ const JobsScreen = ({ darkMode = false }) => {
                 marginBottom: 24,
                 lineHeight: 20,
               }}>
-                Google Search cannot be embedded due to security restrictions. Please open the link in your browser.
+                Google Search cannot be embedded due to security restrictions or rate limiting. Please open the link in your browser to view job listings.
               </Text>
+              
+              <Pressable
+                onPress={() => {
+                  // Use Linking to open in external browser
+                  Linking.openURL(googleSearchUrl).catch(err => {
+                    console.error('Failed to open URL:', err);
+                  });
+                }}
+                style={({ pressed }) => ({
+                  backgroundColor: '#1E88E5',
+                  paddingHorizontal: 32,
+                  paddingVertical: 14,
+                  borderRadius: 12,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  gap: 8,
+                  transform: [{ scale: pressed ? 0.98 : 1 }],
+                })}
+              >
+                <Text style={{
+                  color: '#FFFFFF',
+                  fontSize: 16,
+                  fontWeight: '600',
+                }}>
+                  Open in Browser
+                </Text>
+                <Text style={{
+                  color: '#FFFFFF',
+                  fontSize: 16,
+                }}>→</Text>
+              </Pressable>
             </View>
           </View>
         ) : (
@@ -399,13 +430,28 @@ const JobsScreen = ({ darkMode = false }) => {
                 const { nativeEvent } = syntheticEvent;
                 console.warn('WebView HTTP error: ', nativeEvent);
                 setLoading(false);
-                // Show error for HTTP errors (403, 0, etc.)
-                setWebViewError(true);
+                
+                // Handle specific error codes
+                if (nativeEvent.statusCode === 429) {
+                  // Rate limited - show specific message
+                  setWebViewError(true);
+                } else if (nativeEvent.statusCode >= 400) {
+                  // Other HTTP errors
+                  setWebViewError(true);
+                }
               }}
               onLoadEnd={(syntheticEvent) => {
                 setLoading(false);
                 // Check if page actually loaded or was blocked
                 const { nativeEvent } = syntheticEvent;
+                
+                // Check if Google redirected to "sorry" page (rate limiting)
+                if (nativeEvent.url && nativeEvent.url.includes('google.com/sorry')) {
+                  console.warn('Google rate limit detected - redirecting to sorry page');
+                  setWebViewError(true);
+                  return;
+                }
+                
                 // If URL is still Google search, it might be blocked
                 if (nativeEvent.url && nativeEvent.url.includes('google.com')) {
                   // Give it a moment, then check if content is actually there
@@ -422,7 +468,11 @@ const JobsScreen = ({ darkMode = false }) => {
               domStorageEnabled={true}
               startInLoadingState={true}
               scalesPageToFit={true}
-              userAgent="Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36"
+              userAgent={Platform.OS === 'ios' 
+                ? "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1"
+                : "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36"}
+              sharedCookiesEnabled={true}
+              thirdPartyCookiesEnabled={true}
             />
           </>
         )}

@@ -1,4 +1,4 @@
-package com.resumeapp
+package com.ask.dev
 
 import android.app.Application
 import com.facebook.react.PackageList

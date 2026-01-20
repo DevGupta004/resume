@@ -40,6 +40,22 @@ const App = () => {
       }
     };
     initTheme();
+
+    // Clean up incomplete downloads on app start (mobile only)
+    if (!isWeb) {
+      const cleanupDownloads = async () => {
+        try {
+          const modelManager = require('./utils/modelManager');
+          if (modelManager && modelManager.cleanupIncompleteDownloads) {
+            await modelManager.cleanupIncompleteDownloads();
+          }
+        } catch (error) {
+          // Silently fail - this is not critical
+          console.log('Could not cleanup incomplete downloads:', error.message);
+        }
+      };
+      cleanupDownloads();
+    }
   }, []);
 
   const handleTabPress = (tabId) => {

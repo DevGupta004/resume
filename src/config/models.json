@@ -1,0 +1,14 @@
+{
+  "models": [
+    {
+      "id": "lfm2.5-1.2b",
+      "name": "LFM2.5 1.2B Instruct",
+      "description": "LFM2.5 1.2B Instruct model with Q8_0 quantization",
+      "url": "https://huggingface.co/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/resolve/main/LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "filename": "LFM2.5-1.2B-Instruct-Q8_0.gguf",
+      "size": "~1.2GB",
+      "recommended": true
+    }
+  ],
+  "defaultModelId": "qwen2-0.5b"
+}

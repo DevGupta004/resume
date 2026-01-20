@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		001951B18A8D58F0784AE18B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9074CB7D2B1B1E8CDF2F70D4 /* PrivacyInfo.xcprivacy */; };
-		00E356F31AD99517003FC87E /* TempRNProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TempRNProjectTests.m */; };
+		00E356F31AD99517003FC87E /* AskDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AskDevTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6B44D3E0B727592BE156ACC9 /* libPods-TempRNProject-TempRNProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1131F0246E288850C56E16A3 /* libPods-TempRNProject-TempRNProjectTests.a */; };
+		195F6B2B2A8773E360B2AF76 /* libPods-AskDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F27D6DDAF0967C87973BE65B /* libPods-AskDev.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		F0564B70E5CFB0FB5B16859E /* libPods-TempRNProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A713F3227C9AB4308789B6D /* libPods-TempRNProject.a */; };
+		A5D43E2779060FE194728A69 /* libPods-AskDev-AskDevTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC44D5A60760AA08D6093B8B /* libPods-AskDev-AskDevTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,48 +23,52 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = TempRNProject;
+			remoteInfo = AskDev;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* TempRNProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempRNProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* AskDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AskDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* TempRNProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempRNProjectTests.m; sourceTree = "<group>"; };
-		03D3156DB1EFB2DB61034579 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Regular.ttf; path = TempRNProject/Fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		073E1C9D925588E19E8F0881 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = SimpleLineIcons.ttf; path = TempRNProject/Fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		1131F0246E288850C56E16A3 /* libPods-TempRNProject-TempRNProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TempRNProject-TempRNProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07F961A680F5B00A75B9A /* TempRNProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TempRNProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TempRNProject/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TempRNProject/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TempRNProject/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TempRNProject/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TempRNProject/main.m; sourceTree = "<group>"; };
-		19A9BE556A1BD52E8BE4932C /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = TempRNProject/Fonts/FontAwesome.ttf; sourceTree = "<group>"; };
-		201DAD3D4D97ECF74F030537 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Solid.ttf; path = TempRNProject/Fonts/FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
-		2A713F3227C9AB4308789B6D /* libPods-TempRNProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TempRNProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BFBD4C56584D88F314EC97C /* EvilIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = EvilIcons.ttf; path = TempRNProject/Fonts/EvilIcons.ttf; sourceTree = "<group>"; };
-		3C0095CD8006C43E2752ED02 /* MaterialIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = MaterialIcons.ttf; path = TempRNProject/Fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* AskDevTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AskDevTests.m; sourceTree = "<group>"; };
+		03D3156DB1EFB2DB61034579 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Regular.ttf; path = AskDev/Fonts/FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
+		073E1C9D925588E19E8F0881 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = SimpleLineIcons.ttf; path = AskDev/Fonts/SimpleLineIcons.ttf; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* AskDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AskDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AskDev/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = AskDev/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AskDev/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AskDev/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AskDev/main.m; sourceTree = "<group>"; };
+		19A9BE556A1BD52E8BE4932C /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = AskDev/Fonts/FontAwesome.ttf; sourceTree = "<group>"; };
+		201DAD3D4D97ECF74F030537 /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Solid.ttf; path = AskDev/Fonts/FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
+		2BFBD4C56584D88F314EC97C /* EvilIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = EvilIcons.ttf; path = AskDev/Fonts/EvilIcons.ttf; sourceTree = "<group>"; };
+		34E62B00A5AF4E17CB5B2293 /* Pods-AskDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskDev.debug.xcconfig"; path = "Target Support Files/Pods-AskDev/Pods-AskDev.debug.xcconfig"; sourceTree = "<group>"; };
+		3C0095CD8006C43E2752ED02 /* MaterialIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = MaterialIcons.ttf; path = AskDev/Fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 		4454CF4A3F024004191ED105 /* Pods-TempRNProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempRNProject.release.xcconfig"; path = "Target Support Files/Pods-TempRNProject/Pods-TempRNProject.release.xcconfig"; sourceTree = "<group>"; };
-		47FD2E93BFA3931DF449907B /* AntDesign.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = AntDesign.ttf; path = TempRNProject/Fonts/AntDesign.ttf; sourceTree = "<group>"; };
-		4BDE182B1625E6A87F9490A3 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Brands.ttf; path = TempRNProject/Fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		4ED0434D6E6DAB5A0CE5A88B /* Octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Octicons.ttf; path = TempRNProject/Fonts/Octicons.ttf; sourceTree = "<group>"; };
-		50CD867160E233F9727E9C37 /* Fontisto.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Fontisto.ttf; path = TempRNProject/Fonts/Fontisto.ttf; sourceTree = "<group>"; };
-		579CD103D6F4228A4FCB16E9 /* Entypo.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Entypo.ttf; path = TempRNProject/Fonts/Entypo.ttf; sourceTree = "<group>"; };
-		64047E75C94267CAC40A839B /* Zocial.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Zocial.ttf; path = TempRNProject/Fonts/Zocial.ttf; sourceTree = "<group>"; };
-		6B228F6A6DBCD471DE1C0E62 /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Ionicons.ttf; path = TempRNProject/Fonts/Ionicons.ttf; sourceTree = "<group>"; };
+		47FD2E93BFA3931DF449907B /* AntDesign.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = AntDesign.ttf; path = AskDev/Fonts/AntDesign.ttf; sourceTree = "<group>"; };
+		4BDE182B1625E6A87F9490A3 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Brands.ttf; path = AskDev/Fonts/FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
+		4ED0434D6E6DAB5A0CE5A88B /* Octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Octicons.ttf; path = AskDev/Fonts/Octicons.ttf; sourceTree = "<group>"; };
+		50CD867160E233F9727E9C37 /* Fontisto.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Fontisto.ttf; path = AskDev/Fonts/Fontisto.ttf; sourceTree = "<group>"; };
+		579CD103D6F4228A4FCB16E9 /* Entypo.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Entypo.ttf; path = AskDev/Fonts/Entypo.ttf; sourceTree = "<group>"; };
+		64047E75C94267CAC40A839B /* Zocial.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Zocial.ttf; path = AskDev/Fonts/Zocial.ttf; sourceTree = "<group>"; };
+		6B228F6A6DBCD471DE1C0E62 /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Ionicons.ttf; path = AskDev/Fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		76355FD8C8BCE106925B07EB /* Pods-TempRNProject-TempRNProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempRNProject-TempRNProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		79F01E425C04B21149FC4FD7 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Regular.ttf; path = TempRNProject/Fonts/FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TempRNProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9074CB7D2B1B1E8CDF2F70D4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TempRNProject/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		79F01E425C04B21149FC4FD7 /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Regular.ttf; path = AskDev/Fonts/FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AskDev/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9074CB7D2B1B1E8CDF2F70D4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = AskDev/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		921CFC085558AF1DED31301E /* Pods-TempRNProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempRNProject.debug.xcconfig"; path = "Target Support Files/Pods-TempRNProject/Pods-TempRNProject.debug.xcconfig"; sourceTree = "<group>"; };
-		A161906BDE048075AA3D6124 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Brands.ttf; path = TempRNProject/Fonts/FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
+		9D263D6414A3BDA1B272800F /* Pods-AskDev-AskDevTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskDev-AskDevTests.debug.xcconfig"; path = "Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A161906BDE048075AA3D6124 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome6_Brands.ttf; path = AskDev/Fonts/FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		CED94918E014D31446ECBD3F /* Pods-TempRNProject-TempRNProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TempRNProject-TempRNProjectTests.release.xcconfig"; path = "Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		DDBDDB33C26F8A392B793833 /* Foundation.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Foundation.ttf; path = TempRNProject/Fonts/Foundation.ttf; sourceTree = "<group>"; };
-		DFA14B5840821421B0B624B8 /* Feather.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Feather.ttf; path = TempRNProject/Fonts/Feather.ttf; sourceTree = "<group>"; };
-		E75755C81F1C9F2FA4958A36 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = MaterialCommunityIcons.ttf; path = TempRNProject/Fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
+		DDBDDB33C26F8A392B793833 /* Foundation.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Foundation.ttf; path = AskDev/Fonts/Foundation.ttf; sourceTree = "<group>"; };
+		DFA14B5840821421B0B624B8 /* Feather.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Feather.ttf; path = AskDev/Fonts/Feather.ttf; sourceTree = "<group>"; };
+		E0AF69DFE1E27394EA5832F7 /* Pods-AskDev-AskDevTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskDev-AskDevTests.release.xcconfig"; path = "Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests.release.xcconfig"; sourceTree = "<group>"; };
+		E75755C81F1C9F2FA4958A36 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = MaterialCommunityIcons.ttf; path = AskDev/Fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FE3265591572757BE0D7E27D /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Solid.ttf; path = TempRNProject/Fonts/FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
+		F27D6DDAF0967C87973BE65B /* libPods-AskDev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskDev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B8E03D81FF7C8CCDB552B5 /* Pods-AskDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskDev.release.xcconfig"; path = "Target Support Files/Pods-AskDev/Pods-AskDev.release.xcconfig"; sourceTree = "<group>"; };
+		FC44D5A60760AA08D6093B8B /* libPods-AskDev-AskDevTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AskDev-AskDevTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3265591572757BE0D7E27D /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome5_Solid.ttf; path = AskDev/Fonts/FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B44D3E0B727592BE156ACC9 /* libPods-TempRNProject-TempRNProjectTests.a in Frameworks */,
+				A5D43E2779060FE194728A69 /* libPods-AskDev-AskDevTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,20 +84,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0564B70E5CFB0FB5B16859E /* libPods-TempRNProject.a in Frameworks */,
+				195F6B2B2A8773E360B2AF76 /* libPods-AskDev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* TempRNProjectTests */ = {
+		00E356EF1AD99517003FC87E /* AskDevTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* TempRNProjectTests.m */,
+				00E356F21AD99517003FC87E /* AskDevTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = TempRNProjectTests;
+			path = AskDevTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -104,7 +108,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* TempRNProject */ = {
+		13B07FAE1A68108700A75B9A /* AskDev */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -116,15 +120,15 @@
 				9074CB7D2B1B1E8CDF2F70D4 /* PrivacyInfo.xcprivacy */,
 				B43FEAB3C2C1860A711385CB /* Fonts */,
 			);
-			name = TempRNProject;
+			name = AskDev;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				2A713F3227C9AB4308789B6D /* libPods-TempRNProject.a */,
-				1131F0246E288850C56E16A3 /* libPods-TempRNProject-TempRNProjectTests.a */,
+				F27D6DDAF0967C87973BE65B /* libPods-AskDev.a */,
+				FC44D5A60760AA08D6093B8B /* libPods-AskDev-AskDevTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,9 +143,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* TempRNProject */,
+				13B07FAE1A68108700A75B9A /* AskDev */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* TempRNProjectTests */,
+				00E356EF1AD99517003FC87E /* AskDevTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -154,8 +158,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* TempRNProject.app */,
-				00E356EE1AD99517003FC87E /* TempRNProjectTests.xctest */,
+				13B07F961A680F5B00A75B9A /* AskDev.app */,
+				00E356EE1AD99517003FC87E /* AskDevTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +198,10 @@
 				4454CF4A3F024004191ED105 /* Pods-TempRNProject.release.xcconfig */,
 				76355FD8C8BCE106925B07EB /* Pods-TempRNProject-TempRNProjectTests.debug.xcconfig */,
 				CED94918E014D31446ECBD3F /* Pods-TempRNProject-TempRNProjectTests.release.xcconfig */,
+				34E62B00A5AF4E17CB5B2293 /* Pods-AskDev.debug.xcconfig */,
+				F8B8E03D81FF7C8CCDB552B5 /* Pods-AskDev.release.xcconfig */,
+				9D263D6414A3BDA1B272800F /* Pods-AskDev-AskDevTests.debug.xcconfig */,
+				E0AF69DFE1E27394EA5832F7 /* Pods-AskDev-AskDevTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,9 +209,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* TempRNProjectTests */ = {
+		00E356ED1AD99517003FC87E /* AskDevTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TempRNProjectTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AskDevTests" */;
 			buildPhases = (
 				5B0B74447E5E99E35477CA7E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -217,14 +225,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = TempRNProjectTests;
-			productName = TempRNProjectTests;
-			productReference = 00E356EE1AD99517003FC87E /* TempRNProjectTests.xctest */;
+			name = AskDevTests;
+			productName = AskDevTests;
+			productReference = 00E356EE1AD99517003FC87E /* AskDevTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* TempRNProject */ = {
+		13B07F861A680F5B00A75B9A /* AskDev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TempRNProject" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AskDev" */;
 			buildPhases = (
 				8E13995EFB55346E68FE2AE1 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -238,9 +246,9 @@
 			);
 			dependencies = (
 			);
-			name = TempRNProject;
-			productName = TempRNProject;
-			productReference = 13B07F961A680F5B00A75B9A /* TempRNProject.app */;
+			name = AskDev;
+			productName = AskDev;
+			productReference = 13B07F961A680F5B00A75B9A /* AskDev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,7 +268,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TempRNProject" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AskDev" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -273,8 +281,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* TempRNProject */,
-				00E356ED1AD99517003FC87E /* TempRNProjectTests */,
+				13B07F861A680F5B00A75B9A /* AskDev */,
+				00E356ED1AD99517003FC87E /* AskDevTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,15 +330,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B0B74447E5E99E35477CA7E /* [CP] Check Pods Manifest.lock */ = {
@@ -348,7 +356,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TempRNProject-TempRNProjectTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AskDev-AskDevTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -361,15 +369,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TempRNProject/Pods-TempRNProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskDev/Pods-AskDev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		857EE5F1D20C1CA9363C1934 /* [CP] Embed Pods Frameworks */ = {
@@ -378,15 +386,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E13995EFB55346E68FE2AE1 /* [CP] Check Pods Manifest.lock */ = {
@@ -404,7 +412,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TempRNProject-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AskDev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -417,15 +425,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TempRNProject-TempRNProjectTests/Pods-TempRNProject-TempRNProjectTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AskDev-AskDevTests/Pods-AskDev-AskDevTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -435,7 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* TempRNProjectTests.m in Sources */,
+				00E356F31AD99517003FC87E /* AskDevTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +461,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* TempRNProject */;
+			target = 13B07F861A680F5B00A75B9A /* AskDev */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -461,14 +469,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76355FD8C8BCE106925B07EB /* Pods-TempRNProject-TempRNProjectTests.debug.xcconfig */;
+			baseConfigurationReference = 9D263D6414A3BDA1B272800F /* Pods-AskDev-AskDevTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = TempRNProjectTests/Info.plist;
+				INFOPLIST_FILE = AskDevTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -480,19 +488,19 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ask.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TempRNProject.app/TempRNProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AskDev.app/AskDev";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CED94918E014D31446ECBD3F /* Pods-TempRNProject-TempRNProjectTests.release.xcconfig */;
+			baseConfigurationReference = E0AF69DFE1E27394EA5832F7 /* Pods-AskDev-AskDevTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = TempRNProjectTests/Info.plist;
+				INFOPLIST_FILE = AskDevTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -504,21 +512,21 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ask.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TempRNProject.app/TempRNProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AskDev.app/AskDev";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 921CFC085558AF1DED31301E /* Pods-TempRNProject.debug.xcconfig */;
+			baseConfigurationReference = 34E62B00A5AF4E17CB5B2293 /* Pods-AskDev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = TempRNProject/Info.plist;
+				INFOPLIST_FILE = AskDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,8 +537,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TempRNProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ask.dev;
+				PRODUCT_NAME = AskDev;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -539,12 +547,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4454CF4A3F024004191ED105 /* Pods-TempRNProject.release.xcconfig */;
+			baseConfigurationReference = F8B8E03D81FF7C8CCDB552B5 /* Pods-AskDev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = TempRNProject/Info.plist;
+				INFOPLIST_FILE = AskDev/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,8 +563,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = TempRNProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ask.dev;
+				PRODUCT_NAME = AskDev;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -716,7 +724,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TempRNProjectTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AskDevTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -725,7 +733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TempRNProject" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AskDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -734,7 +742,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TempRNProject" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AskDev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

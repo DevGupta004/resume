@@ -9,11 +9,36 @@ module.exports = {
   entry: './web/index.js',
   mode: mode,
   devtool: mode === 'production' ? 'source-map' : 'eval-source-map',
+  ignoreWarnings: [
+    {
+      module: /react-native-fs/,
+      message: /Critical dependency/,
+    },
+  ],
   module: {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules\/(?!(react-native-.*|@react-native.*|tamagui|@tamagui.*|react-native-webview)\/).*|node_modules\/react-native-image-picker/,
+        exclude: function(modulePath) {
+          // Exclude react-native-fs completely
+          if (modulePath.includes('node_modules/react-native-fs')) {
+            return true;
+          }
+          // Exclude llama.rn completely
+          if (modulePath.includes('node_modules/llama.rn')) {
+            return true;
+          }
+          // Exclude react-native-image-picker
+          if (modulePath.includes('node_modules/react-native-image-picker')) {
+            return true;
+          }
+          // Default exclude pattern for other node_modules
+          if (modulePath.includes('node_modules') && 
+              !modulePath.match(/node_modules\/(react-native-|@react-native|tamagui|@tamagui|react-native-webview)/)) {
+            return true;
+          }
+          return false;
+        },
         use: {
           loader: 'babel-loader',
           options: {
@@ -60,6 +85,10 @@ module.exports = {
       'react-native$': 'react-native-web',
       // Exclude react-native-image-picker on web (we use browser file picker instead)
       'react-native-image-picker': false,
+      // Exclude llama.rn on web (React Native only)
+      'llama.rn': false,
+      // Exclude react-native-fs on web (React Native only)
+      'react-native-fs': false,
     },
     fallback: {
       // process is provided by ProvidePlugin and DefinePlugin
@@ -95,6 +124,20 @@ module.exports = {
       '__DEV__': JSON.stringify(mode !== 'production'),
       '__TEST__': JSON.stringify(false),
     }),
+    // Ignore React Native-only packages on web builds
+    new webpack.IgnorePlugin({
+      resourceRegExp: /^(llama\.rn|react-native-fs)$/,
+    }),
+    // Replace react-native-fs with empty module on web
+    new webpack.NormalModuleReplacementPlugin(
+      /^react-native-fs$/,
+      require.resolve('./web/empty-module.js')
+    ),
+    // Replace llama.rn with empty module on web
+    new webpack.NormalModuleReplacementPlugin(
+      /^llama\.rn$/,
+      require.resolve('./web/empty-module.js')
+    ),
     // process is imported in web/index.js, no need for ProvidePlugin
   ],
   devServer: {
