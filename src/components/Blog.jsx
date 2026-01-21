@@ -42,10 +42,12 @@ const Blog = ({ darkMode = false }) => {
 
   const getCardWidth = () => {
     if (Platform.OS === 'web' && typeof window !== 'undefined') {
-      if (window.innerWidth >= 1280) {
-        return '31%'; // 3 columns on large desktop
+      if (window.innerWidth >= 1400) {
+        return '32%'; // 3 columns on extra large desktop
+      } else if (window.innerWidth >= 1024) {
+        return '48%'; // 2 columns on large desktop/tablet
       } else if (window.innerWidth >= 768) {
-        return '48%'; // 2 columns on tablet/desktop
+        return '48%'; // 2 columns on tablet
       }
     }
     return '100%'; // 1 column on mobile
@@ -109,18 +111,29 @@ const Blog = ({ darkMode = false }) => {
     );
   }
 
+  const isDesktopWeb = Platform.OS === 'web' && typeof window !== 'undefined' && window.innerWidth >= 1024;
+  
   return (
-    <View id="blog" style={{ paddingVertical: 48, backgroundColor: bgColor }}>
-      <View style={{ maxWidth: 1280, marginHorizontal: 'auto', paddingHorizontal: Platform.OS === 'web' ? 24 : 16 }}>
+    <View id="blog" style={{ paddingVertical: isDesktopWeb ? 64 : 48, backgroundColor: bgColor }}>
+      <View style={{ 
+        maxWidth: isDesktopWeb ? 1400 : 1280, 
+        marginHorizontal: 'auto', 
+        paddingHorizontal: isDesktopWeb ? 48 : Platform.OS === 'web' ? 32 : 16 
+      }}>
         <View style={{ 
           flexDirection: 'row', 
           justifyContent: 'space-between', 
           alignItems: 'center', 
-          marginBottom: 32,
+          marginBottom: isDesktopWeb ? 48 : 32,
           flexWrap: 'wrap',
           gap: 16,
         }}>
-          <Text style={{ fontSize: Platform.OS === 'web' ? 36 : 30, fontWeight: '700', color: textColor }}>
+          <Text style={{ 
+            fontSize: isDesktopWeb ? 42 : Platform.OS === 'web' ? 36 : 30, 
+            fontWeight: '700', 
+            color: textColor,
+            letterSpacing: -0.5,
+          }}>
             Blog
           </Text>
           <Pressable
@@ -128,8 +141,8 @@ const Blog = ({ darkMode = false }) => {
             style={({ pressed }) => ({
               flexDirection: 'row',
               alignItems: 'center',
-              paddingVertical: 10,
-              paddingHorizontal: 20,
+              paddingVertical: isDesktopWeb ? 12 : 10,
+              paddingHorizontal: isDesktopWeb ? 24 : 20,
               borderRadius: 8,
               backgroundColor: darkMode ? 'rgba(30, 136, 229, 0.15)' : 'rgba(30, 136, 229, 0.1)',
               borderWidth: 1,
@@ -137,8 +150,15 @@ const Blog = ({ darkMode = false }) => {
               transform: [{ scale: pressed ? 0.98 : 1 }],
             })}
           >
-            <Text style={{ color: linkColor, fontWeight: '600', marginRight: 8, fontSize: 14 }}>View on Medium</Text>
-            <Icon name="external-link" size={16} color={linkColor} />
+            <Text style={{ 
+              color: linkColor, 
+              fontWeight: '600', 
+              marginRight: 8, 
+              fontSize: isDesktopWeb ? 15 : 14 
+            }}>
+              View on Medium
+            </Text>
+            <Icon name="external-link" size={isDesktopWeb ? 18 : 16} color={linkColor} />
           </Pressable>
         </View>
 
@@ -163,17 +183,17 @@ const Blog = ({ darkMode = false }) => {
           <View style={{ 
             flexDirection: 'row', 
             flexWrap: 'wrap', 
-            marginHorizontal: Platform.OS === 'web' ? -16 : -12,
-            gap: Platform.OS === 'web' ? 20 : 16,
+            marginHorizontal: isDesktopWeb ? -20 : Platform.OS === 'web' ? -16 : -12,
+            gap: isDesktopWeb ? 28 : Platform.OS === 'web' ? 24 : 16,
           }}>
             {stories.map((story, idx) => (
               <View 
                 key={idx} 
                 style={{ 
                   width: getCardWidth(),
-                  paddingHorizontal: Platform.OS === 'web' ? 16 : 12,
-                  marginBottom: Platform.OS === 'web' ? 20 : 16,
-                  minWidth: Platform.OS === 'web' && typeof window !== 'undefined' && window.innerWidth >= 768 ? 280 : undefined,
+                  paddingHorizontal: isDesktopWeb ? 20 : Platform.OS === 'web' ? 16 : 12,
+                  marginBottom: isDesktopWeb ? 28 : Platform.OS === 'web' ? 24 : 16,
+                  minWidth: Platform.OS === 'web' && typeof window !== 'undefined' && window.innerWidth >= 768 ? (isDesktopWeb ? 380 : 320) : undefined,
                 }}
               >
                 <Pressable
@@ -181,14 +201,14 @@ const Blog = ({ darkMode = false }) => {
                   style={({ pressed }) => ({
                     borderWidth: 1,
                     borderColor: borderColor,
-                    borderRadius: 12,
+                    borderRadius: 16,
                     backgroundColor: cardBg,
                     overflow: 'hidden',
                     shadowColor: '#000',
-                    shadowOffset: { width: 0, height: 2 },
-                    shadowOpacity: darkMode ? 0.3 : 0.1,
-                    shadowRadius: 6,
-                    elevation: 3,
+                    shadowOffset: { width: 0, height: 4 },
+                    shadowOpacity: darkMode ? 0.3 : 0.12,
+                    shadowRadius: isDesktopWeb ? 12 : 8,
+                    elevation: 4,
                     transform: [{ scale: pressed ? 0.98 : 1 }],
                     height: '100%',
                     display: 'flex',
@@ -200,25 +220,26 @@ const Blog = ({ darkMode = false }) => {
                       source={{ uri: story.imageUrl }}
                       style={{
                         width: '100%',
-                        height: Platform.OS === 'web' ? 220 : 200,
+                        height: isDesktopWeb ? 260 : Platform.OS === 'web' ? 240 : 200,
                         backgroundColor: borderColor,
                       }}
                       resizeMode="cover"
                     />
                   )}
                   <View style={{ 
-                    padding: Platform.OS === 'web' ? 24 : 20,
+                    padding: isDesktopWeb ? 28 : Platform.OS === 'web' ? 24 : 20,
                     flex: 1,
                     display: 'flex',
                     flexDirection: 'column',
                   }}>
                     <Text 
                       style={{ 
-                        fontSize: Platform.OS === 'web' ? 20 : 18, 
-                        fontWeight: '600', 
-                        marginBottom: 10, 
+                        fontSize: isDesktopWeb ? 22 : Platform.OS === 'web' ? 20 : 18, 
+                        fontWeight: '700', 
+                        marginBottom: isDesktopWeb ? 12 : 10, 
                         color: textColor,
-                        lineHeight: Platform.OS === 'web' ? 28 : 24,
+                        lineHeight: isDesktopWeb ? 32 : Platform.OS === 'web' ? 28 : 24,
+                        letterSpacing: -0.3,
                       }}
                       numberOfLines={2}
                     >
@@ -226,13 +247,13 @@ const Blog = ({ darkMode = false }) => {
                     </Text>
                     <Text 
                       style={{ 
-                        marginBottom: 16, 
-                        fontSize: Platform.OS === 'web' ? 15 : 14, 
+                        marginBottom: isDesktopWeb ? 20 : 16, 
+                        fontSize: isDesktopWeb ? 16 : Platform.OS === 'web' ? 15 : 14, 
                         color: subTextColor,
-                        lineHeight: Platform.OS === 'web' ? 22 : 20,
+                        lineHeight: isDesktopWeb ? 24 : Platform.OS === 'web' ? 22 : 20,
                         flex: 1,
                       }}
-                      numberOfLines={Platform.OS === 'web' ? 4 : 3}
+                      numberOfLines={isDesktopWeb ? 5 : Platform.OS === 'web' ? 4 : 3}
                     >
                       {story.description}
                     </Text>
@@ -241,36 +262,49 @@ const Blog = ({ darkMode = false }) => {
                       justifyContent: 'space-between', 
                       alignItems: 'center',
                       marginTop: 'auto',
-                      paddingTop: 12,
+                      paddingTop: isDesktopWeb ? 16 : 12,
                     }}>
-                      <Text style={{ fontSize: 12, color: subTextColor, fontWeight: '500' }}>
+                      <Text style={{ 
+                        fontSize: isDesktopWeb ? 13 : 12, 
+                        color: subTextColor, 
+                        fontWeight: '500' 
+                      }}>
                         {formatDate(story.pubDate)}
                       </Text>
                       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 13, color: linkColor, marginRight: 6, fontWeight: '600' }}>
+                        <Text style={{ 
+                          fontSize: isDesktopWeb ? 14 : 13, 
+                          color: linkColor, 
+                          marginRight: 6, 
+                          fontWeight: '600' 
+                        }}>
                           Read more
                         </Text>
-                        <Icon name="arrow-right" size={14} color={linkColor} />
+                        <Icon name="arrow-right" size={isDesktopWeb ? 16 : 14} color={linkColor} />
                       </View>
                     </View>
                     {story.categories && story.categories.length > 0 && (
                       <View style={{ 
                         flexDirection: 'row', 
                         flexWrap: 'wrap', 
-                        marginTop: 14,
-                        gap: 6,
+                        marginTop: isDesktopWeb ? 16 : 14,
+                        gap: 8,
                       }}>
                         {story.categories.slice(0, 3).map((cat, i) => (
                           <View
                             key={i}
                             style={{
-                              paddingVertical: 4,
-                              paddingHorizontal: 10,
+                              paddingVertical: isDesktopWeb ? 6 : 4,
+                              paddingHorizontal: isDesktopWeb ? 12 : 10,
                               backgroundColor: darkMode ? 'rgba(30, 136, 229, 0.15)' : 'rgba(30, 136, 229, 0.1)',
                               borderRadius: 6,
                             }}
                           >
-                            <Text style={{ fontSize: 11, color: linkColor, fontWeight: '500' }}>
+                            <Text style={{ 
+                              fontSize: isDesktopWeb ? 12 : 11, 
+                              color: linkColor, 
+                              fontWeight: '500' 
+                            }}>
                               {cat}
                             </Text>
                           </View>
