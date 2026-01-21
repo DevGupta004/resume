@@ -7,7 +7,7 @@ import { isWeb } from '../utils/platform';
 const tabs = [
   { id: 'about', label: 'About', icon: 'user' },
   { id: 'neo', label: 'Ask Dev', icon: 'message-circle' },
-  { id: 'jobs', label: 'Jobs', icon: 'briefcase' },
+  { id: 'blog', label: 'Blog', icon: 'book-open' },
 ];
 
 const BottomTabs = ({ activeTab, onTabPress, darkMode }) => {

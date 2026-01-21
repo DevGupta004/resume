@@ -6,7 +6,7 @@ import { isWeb, useIsMobileWeb } from './utils/platform';
 
 // Screens
 import AboutScreen from './screens/AboutScreen';
-import JobsScreen from './screens/JobsScreen';
+import BlogScreen from './screens/BlogScreen';
 import NeoScreen from './screens/NeoScreen';
 import ExperienceScreen from './screens/ExperienceScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
@@ -66,13 +66,21 @@ const App = () => {
   };
 
   const handleDrawerNavigate = (screenId) => {
-    setDrawerScreen(screenId);
+    // If navigating to a tab screen from drawer, set activeTab instead
+    if (['about', 'blog', 'neo'].includes(screenId)) {
+      setActiveTab(screenId);
+      setDrawerScreen(null);
+    } else {
+      setDrawerScreen(screenId);
+    }
     setDrawerVisible(false);
   };
 
   const renderScreen = () => {
     if (drawerScreen) {
       switch (drawerScreen) {
+        case 'blog':
+          return <BlogScreen darkMode={darkMode} />;
         case 'experience':
           return <ExperienceScreen darkMode={darkMode} />;
         case 'projects':
@@ -89,8 +97,8 @@ const App = () => {
     switch (activeTab) {
       case 'about':
         return <AboutScreen darkMode={darkMode} />;
-      case 'jobs':
-        return <JobsScreen darkMode={darkMode} />;
+      case 'blog':
+        return <BlogScreen darkMode={darkMode} />;
       case 'neo':
         return <NeoScreen darkMode={darkMode} />;
       default:

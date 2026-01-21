@@ -10,7 +10,7 @@ import { getProfileImage } from '../utils/imagePicker';
 const tabs = [
   { id: 'about', label: 'About', icon: 'user' },
   { id: 'neo', label: 'Ask Dev', icon: 'message-circle' },
-  { id: 'jobs', label: 'Jobs', icon: 'briefcase' },
+  { id: 'blog', label: 'Blog', icon: 'book-open' },
 ];
 
 const TopHeader = ({ darkMode, onDarkModeToggle, onProfilePress, activeTab, onTabPress, showTabs = true }) => {

@@ -10,6 +10,7 @@ import ImageViewer from './ImageViewer';
 
 const drawerItems = [
   { name: 'About', id: 'about', icon: 'user' },
+  { name: 'Blog', id: 'blog', icon: 'book-open' },
   { name: 'Experience', id: 'experience', icon: 'briefcase' },
   { name: 'Projects', id: 'projects', icon: 'folder' },
   { name: 'Skills', id: 'skills', icon: 'code' },
